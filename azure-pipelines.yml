@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: docker pull katalonstudio/katalon
+- script: docker pull katalonstudio/katalon:8.4.1
   displayName: 'Pull katalon studio images'
 - script: docker run -t --rm -v "$(pwd)":/katalon/katalon/source katalonstudio/katalon katalon-execute.sh -browserType="Chrome" -apiKey=1327ded1-ce91-409e-ad90-049b5f61b39d -retry=0 -statusDelay=15 -testSuitePath="Test Suites/Report" -sendMail="vietkhang94@gmail.com"
   displayName: 'Runnning Katalon TS_RegressionTest'
